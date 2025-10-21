@@ -99,7 +99,8 @@ services:
     external_port: {{ services.grafana.external_port | default(3000, true) }}
 
 data_manager:
-  collection_name: {{ collection_name | default("default_collection", true) }}
+  collection_name: {{ data_manager.collection_name | default("default_collection", true) }}
+  max_depth: {{ data_manager.max_depth | default(25, true) }}
   input_lists:
     {%- for input_list in data_manager.input_lists | default([]) %}
     - {{ input_list }}
