@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>API Reference - A2RCHI Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API Reference";
+        var mkdocs_page_input_path = "api_reference.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> A2RCHI Docs
+        </a>
+        <div class="version">
+          1.2.0
+        </div><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">A2RCHI</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Install</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quickstart/">Quickstart</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../user_guide/">User Guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../advanced_setup_deploy/">Advanced Setup and Deployment</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">API Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cli">CLI</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#commands">Commands</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-create">1. create</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-delete">2. delete</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-list-services">3. list-services</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-list-deployments">4. list-deployments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5-evaluate">5. evaluate</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration-yaml-api-reference">Configuration YAML API Reference</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#top-level-fields">Top-Level Fields</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#name">name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#global">global</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#services">services</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data_manager">data_manager</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#a2rchi">a2rchi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#utils">utils</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#required-fields">Required Fields</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example">Example</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../developer_guide/">Developer Guide</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">A2RCHI Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/mit-submit/A2rchi/edit/master/docs/api_reference.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-reference">API Reference</h1>
+<h2 id="cli">CLI</h2>
+<p>The A2RCHI CLI provides commands to create, manage, and delete A2RCHI deployments and services.</p>
+<hr />
+<h3 id="commands">Commands</h3>
+<h4 id="1-create">1. <code>create</code></h4>
+<p>Create a new A2RCHI deployment.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-sh">a2rchi create --name &lt;deployment_name&gt; --config &lt;config.yaml&gt; --env-file &lt;secrets.env&gt; [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>--name, -n</code> (str, required): Name of the deployment.</li>
+<li><code>--config, -c</code> (str): Path to a YAML configuration file (repeat the flag to supply multiple files).</li>
+<li><code>--config-dir, -cd</code> (str): Directory containing configuration files.</li>
+<li><code>--env-file, -e</code> (str, required): Path to the secrets <code>.env</code> file.</li>
+<li><code>--services, -s</code> (comma-separated, required): List of services to enable (e.g., <code>chatbot,uploader</code>).</li>
+<li><code>--sources, -src</code> (comma-separated): Additional data sources to enable (e.g., <code>git,jira</code>). The <code>links</code> source is always available.</li>
+<li><code>--podman, -p</code>: Use Podman instead of Docker.</li>
+<li><code>--gpu-ids</code>: GPU configuration (<code>all</code> or comma-separated IDs).</li>
+<li><code>--tag, -t</code> (str): Image tag for built containers (default: <code>2000</code>).</li>
+<li><code>--hostmode</code>: Use host network mode.</li>
+<li><code>--verbosity, -v</code> (int): Logging verbosity (0-4, default: 3).</li>
+<li><code>--force, -f</code>: Overwrite existing deployment if it exists.</li>
+<li><code>--dry, --dry-run</code>: Validate and show what would be created, but do not deploy.</li>
+</ul>
+<hr />
+<h4 id="2-delete">2. <code>delete</code></h4>
+<p>Delete an existing A2RCHI deployment.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-sh">a2rchi delete --name &lt;deployment_name&gt; [OPTIONS]
+</code></pre>
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>--name, -n</code> (str): Name of the deployment to delete.</li>
+<li><code>--rmi</code>: Remove container images.</li>
+<li><code>--rmv</code>: Remove volumes.</li>
+<li><code>--keep-files</code>: Keep deployment files (do not remove directory).</li>
+<li><code>--list</code>: List all available deployments.</li>
+</ul>
+<hr />
+<h4 id="3-list-services">3. <code>list-services</code></h4>
+<p>List all available A2RCHI services and data sources.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-sh">a2rchi list-services
+</code></pre>
+<hr />
+<h4 id="4-list-deployments">4. <code>list-deployments</code></h4>
+<p>List all existing A2RCHI deployments.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-sh">a2rchi list-deployments
+</code></pre>
+<hr />
+<h4 id="5-evaluate">5. <code>evaluate</code></h4>
+<p>Launch the benchmarking runtime to evaluate one or more configurations against a set of questions/answers.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="language-sh">a2rchi evaluate --name &lt;run_name&gt; --env-file &lt;secrets.env&gt; --config &lt;file.yaml&gt; [OPTIONS]
+</code></pre>
+<p>Use <code>--config-dir</code> if you want to point to a directory of configs instead.</p>
+<p><strong>Options:</strong></p>
+<ul>
+<li>Supports the same flags as <code>create</code> (<code>--sources</code>, <code>--podman</code>, <code>--gpu-ids</code>, <code>--tag</code>, <code>--hostmode</code>, <code>--verbosity</code>, <code>--force</code>).</li>
+<li>Reads configuration from one or more YAML files that should define the <code>services.benchmarking</code> section.</li>
+</ul>
+<hr />
+<h3 id="examples">Examples</h3>
+<p><strong>Create a deployment:</strong></p>
+<pre><code class="language-sh">a2rchi create --name mybot --config my.yaml --env-file secrets.env --services chatbot,uploader
+</code></pre>
+<p><strong>Delete a deployment and remove images/volumes:</strong></p>
+<pre><code class="language-sh">a2rchi delete --name mybot --rmi --rmv
+</code></pre>
+<p><strong>List all deployments:</strong></p>
+<pre><code class="language-sh">a2rchi list-deployments
+</code></pre>
+<p><strong>List all services:</strong></p>
+<pre><code class="language-sh">a2rchi list-services
+</code></pre>
+<hr />
+<h2 id="configuration-yaml-api-reference">Configuration YAML API Reference</h2>
+<p>The A2RCHI configuration YAML file defines the deployment, services, data sources, pipelines, models, and interface settings for your A2RCHI instance.</p>
+<hr />
+<h3 id="top-level-fields">Top-Level Fields</h3>
+<h4 id="name"><code>name</code></h4>
+<ul>
+<li><strong>Type:</strong> string</li>
+<li><strong>Description:</strong> Name of the deployment.</li>
+</ul>
+<h4 id="global"><code>global</code></h4>
+<ul>
+<li><strong>DATA_PATH:</strong> path for persisted data (defaults to <code>/root/data/</code>).</li>
+<li><strong>ACCOUNTS_PATH:</strong> path for uploader/grader account data.</li>
+<li><strong>ACCEPTED_FILES:</strong> list of extensions allowed for manual uploads.</li>
+<li><strong>LOGGING.input_output_filename:</strong> log file that stores pipeline inputs/outputs.</li>
+<li><strong>verbosity:</strong> default logging level for services (0-4).</li>
+</ul>
+<hr />
+<h3 id="services"><code>services</code></h3>
+<p>Holds configuration for every containerised service. Common keys include:</p>
+<ul>
+<li><strong>port / external_port:</strong> internal versus host port mapping for web apps.</li>
+<li><strong>host / hostname:</strong> network binding and public hostname for frontends.</li>
+<li><strong>volume/paths:</strong> template or static asset paths expected by the service.</li>
+</ul>
+<p>Key services:</p>
+<ul>
+<li><strong>chat_app:</strong> Chat interface options (<code>trained_on</code>, ports, UI toggles).</li>
+<li><strong>uploader_app:</strong> Document uploader settings (<code>verify_urls</code>, ports).</li>
+<li><strong>grader_app:</strong> Grader-specific knobs (<code>num_problems</code>, rubric paths).</li>
+<li><strong>grafana:</strong> Port configuration for the monitoring dashboard.</li>
+<li><strong>chromadb:</strong> Connection details for the vector store container (<code>chromadb_host</code>, <code>chromadb_port</code>, <code>chromadb_external_port</code>).</li>
+<li><strong>postgres:</strong> Database credentials (<code>user</code>, <code>database</code>, <code>port</code>, <code>host</code>).</li>
+<li><strong>piazza</strong>, <strong>mattermost</strong>, <strong>redmine_mailbox</strong>, <strong>benchmarking</strong>, ...: Service-specific options (see user guide sections above).</li>
+</ul>
+<hr />
+<h3 id="data_manager"><code>data_manager</code></h3>
+<p>Controls ingestion sources and vector store behaviour.</p>
+<ul>
+<li><strong>sources.links.input_lists:</strong> <code>.list</code> files with seed URLs.</li>
+<li><strong>sources.links.scraper:</strong> Behaviour toggles for HTTP scraping (resetting data, URL verification, warning output).</li>
+<li><strong>sources.<name>.visible:</strong> Mark whether documents harvested from a source should appear in chat citations and other user-facing listings (<code>true</code> by default).</li>
+<li><strong>sources.git.enabled / sources.sso.enabled / sources.jira.enabled / sources.redmine.enabled:</strong> Toggle additional collectors when paired with <code>--sources</code>.</li>
+<li><strong>embedding_name:</strong> Embedding backend (<code>OpenAIEmbeddings</code>, <code>HuggingFaceEmbeddings</code>, ...).</li>
+<li><strong>embedding_class_map:</strong> Backend specific parameters (model name, device, similarity threshold).</li>
+<li><strong>chunk_size / chunk_overlap:</strong> Text splitter parameters.</li>
+<li><strong>reset_collection:</strong> Whether to wipe the collection before re-populating.</li>
+<li><strong>num_documents_to_retrieve:</strong> Top-k documents returned at query time.</li>
+<li><strong>distance_metric / use_hybrid_search / bm25_weight / semantic_weight / bm25.{k1,b}:</strong> Retrieval tuning knobs.</li>
+<li><strong>utils.anonymizer</strong> (legacy) / <strong>data_manager.utils.anonymizer</strong>: Redaction settings applied when ticket collectors anonymise content.</li>
+</ul>
+<hr />
+<h3 id="a2rchi"><code>a2rchi</code></h3>
+<p>Defines pipelines and model routing.</p>
+<ul>
+<li><strong>pipelines:</strong> List of pipeline names to load (e.g., <code>QAPipeline</code>).</li>
+<li><strong>pipeline_map:</strong> Per-pipeline configuration of prompts, models, and token limits.</li>
+<li><strong>model_class_map:</strong> Definitions for each model family (base model names, provider-specific kwargs).</li>
+<li><strong>chain_update_time:</strong> Polling interval for hot-reloading chains.</li>
+</ul>
+<hr />
+<h3 id="utils"><code>utils</code></h3>
+<p>Utility configuration for supporting components (mostly legacy fallbacks):</p>
+<ul>
+<li><strong>sso:</strong> Global SSO defaults used when a source-specific override is not provided.</li>
+<li><strong>git:</strong> Legacy toggle for Git scraping.</li>
+<li><strong>jira / redmine:</strong> Compatibility settings for ticket integrations; prefer configuring these under <code>data_manager.sources</code>.</li>
+</ul>
+<hr />
+<h3 id="required-fields">Required Fields</h3>
+<p>Some fields are required depending on enabled services and pipelines. For example:</p>
+<ul>
+<li><code>name</code></li>
+<li><code>data_manager.sources.links.input_lists</code> (or other source-specific configuration)</li>
+<li><code>a2rchi.pipelines</code> and matching <code>a2rchi.pipeline_map</code> entries</li>
+<li>Service-specific fields (e.g., <code>services.piazza.network_id</code>, <code>services.grader_app.num_problems</code>)</li>
+</ul>
+<p>See the <a href="../user_guide/">User Guide</a> for more configuration examples and explanations.</p>
+<hr />
+<h3 id="example">Example</h3>
+<pre><code class="language-yaml">name: my_deployment
+global:
+  DATA_PATH: &quot;/root/data/&quot;
+  ACCOUNTS_PATH: &quot;/root/.accounts/&quot;
+  ACCEPTED_FILES: [&quot;.txt&quot;, &quot;.pdf&quot;]
+  LOGGING:
+    input_output_filename: &quot;chain_input_output.log&quot;
+  verbosity: 3
+
+data_manager:
+  sources:
+    links:
+      input_lists:
+        - examples/deployments/basic-gpu/miscellanea.list
+      scraper:
+        reset_data: true
+        verify_urls: false
+        enable_warnings: false
+  utils:
+    anonymizer:
+      nlp_model: en_core_web_sm
+  embedding_name: &quot;OpenAIEmbeddings&quot;
+  chunk_size: 1000
+  chunk_overlap: 0
+  num_documents_to_retrieve: 5
+
+a2rchi:
+  pipelines: [&quot;QAPipeline&quot;]
+  pipeline_map:
+    QAPipeline:
+      max_tokens: 10000
+      prompts:
+        required:
+          condense_prompt: &quot;examples/deployments/basic-gpu/condense.prompt&quot;
+          chat_prompt: &quot;examples/deployments/basic-gpu/qa.prompt&quot;
+      models:
+        required:
+          condense_model: &quot;OpenAIGPT4&quot;
+          chat_model: &quot;OpenAIGPT4&quot;
+  model_class_map:
+    OpenAIGPT4:
+      class: OpenAIGPT4
+      kwargs:
+        model_name: gpt-4
+
+services:
+  chat_app:
+    trained_on: &quot;Course documentation&quot;
+    hostname: &quot;example.mit.edu&quot;
+  chromadb:
+    chromadb_host: &quot;chromadb&quot;
+</code></pre>
+<hr />
+<p><strong>Tip:</strong>
+For a full template, see <code>src/cli/templates/base-config.yaml</code> in
+the repository.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../advanced_setup_deploy/" class="btn btn-neutral float-left" title="Advanced Setup and Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../developer_guide/" class="btn btn-neutral float-right" title="Developer Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/mit-submit/A2rchi" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../advanced_setup_deploy/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../developer_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
